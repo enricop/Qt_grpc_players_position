@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package remotepos;
+
+service PositionServer {
+  rpc updatePosition(PosData) returns(Status) {}
+}
+
+message PosData {
+  int32 playerID = 1;
+  float latitude = 2;
+  float longitude = 3;
+}
+
+message Status {
+  bool errorcode = 1;
+}
